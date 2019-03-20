@@ -3,7 +3,7 @@
 rm(list=ls())       # clear objects in memory
 library(ri)         # load the RI package
 set.seed(1234567)   # random number seed, so that results are reproducible
-pdf('../../results/chapter-2/ri-results.png') # save results explicitly
+pdf('../../results/chapter-2/ri-results.pdf') # save results explicitly
 # input full schedule of potential outcomes
 # using Table 2.1
 
