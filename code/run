@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-mkdir -p ../results/chapter-{2,3,4,5,6,7,8,9,10,11,12,13}
+# mkdir -p ../results/chapter-{2,3,4,5,6,7,8,9,10,11,12,13}
 set -ex
 
-
-# This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+# Chapter 2:
 Rscript "chapter-2/GerberGreenBook_Chapter2_HowToRandomize_7treat2.R"
 Rscript "chapter-2/GerberGreenBook_Chapter2_Simulation_7_treat_2_Table_2_1.R"
 
+# Chapter 3:
+Rscript "chapter-3/Arceneaux_AAAPSSsubset_2005_CodeforCh3.R"
+Rscript "chapter-3/GerberGreenBook_Chapter3_Figure_1.R"
+Rscript "chapter-3/GerberGreenBook_Chapter3_RIandTTest_Box_3_7.R"
