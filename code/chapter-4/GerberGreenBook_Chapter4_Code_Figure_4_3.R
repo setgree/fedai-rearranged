@@ -43,7 +43,7 @@ estdist <- gendist(Ys.est,perms,X=Xweak,prob=prob,HT=FALSE)
 # dispdist(estdist,ate,display.plot=FALSE)
 
 ### Comparisons to Graph Figure 4.3
-
+pdf('../../results/chapter-4/figure-4-3.pdf')
 weights <- Z/prob + (1-Z)/(1-prob)
 
 summary(lm(Y~Z+Xweak,weights=weights))
@@ -61,4 +61,4 @@ estdist <- gendist(Ys,perms,X=Xweak,prob=prob,HT=FALSE)
 dispdist(estdist,ate)$se
 mean(estdist)
 mean(Y1-Y0)
-
+dev.off()
