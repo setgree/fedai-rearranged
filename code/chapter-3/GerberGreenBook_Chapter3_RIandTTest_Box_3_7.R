@@ -50,3 +50,4 @@ t.test(Y~Z,var.equal=TRUE,alternative= "less")
 
 out.lm <- lm(Y ~ Z)
 summary(out.lm)
+dev.off()
