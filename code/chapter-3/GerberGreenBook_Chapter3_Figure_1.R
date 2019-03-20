@@ -1,6 +1,7 @@
 rm(list=ls(all=TRUE))
 library(ri)
 set.seed(1234567)
+pdf('../../results/chapter-3/Figure-3.pdf') # save results explicitly 
 
 Y0 <- c(0,1,2,4,4,6,6,9,14,15,16,16,17,18)
 Y1 <- c(0,0,1,2,0,0,2,3,12,9,8,15,5,17)
@@ -33,7 +34,7 @@ blockmeans <- rep(NA,numperms)
 # loop to create average treatment effect estimates for each randomization
 for (i in 1:numperms) blockmeans[i] <- weighted.mean(Y1[blockperms[,i]==1],c(8/2,8/2,6/2,6/2)) - weighted.mean(Y0[blockperms[,i]==0],c(8/6,8/6,8/6,8/6,8/6,8/6,6/4,6/4,6/4,6/4))
 
-save(compmeans,blockmeans,file="figure3.1.Rdata")
+save(compmeans,blockmeans,file="../../results/chapter-3/figure3.1.Rdata")
 
 # Draw histograms for Figure 3.1	
 
@@ -48,3 +49,4 @@ length(compmeans[compmeans > 0])/length(compmeans)
 
 length(blockmeans[blockmeans > 0])
 length(blockmeans[blockmeans > 0])/length(blockmeans)
+dev.off()

@@ -3,7 +3,7 @@
 rm(list=ls())       # clear objects in memory
 library(ri)         # load the RI package
 set.seed(1234567)   # random number seed, so that results are reproducible
-
+pdf('../../results/chapter-2/ri-results.png') # save results explicitly
 # input full schedule of potential outcomes
 # using Table 2.1
 
@@ -39,7 +39,6 @@ table(probs)
 truedist <- gendist(Ys,perms,Ypre=NULL,prob=probs,HT=FALSE)
 
 # display the frequency distribution of the sampling distribution
-png('../../results/chapter-2/ri-results.png')
 table(truedist)
 
 # graphically display the sampling distribution
@@ -51,4 +50,4 @@ truedist
 
 # show the link between each estimate and each randomization
 rbind(truedist)
-dev.off()
+dev.off() # close graphics device

@@ -1,6 +1,6 @@
 # Clear workspace
 rm(list = ls())
-
+pdf('../../results/chapter-3/box3-7.pdf')
 # Note first must set file directory where data file is stored
 
 # Example for mac: setwd("/Users/name/Documents/Data/)
@@ -8,7 +8,7 @@ rm(list = ls())
 # If not sure of working directory, type: getwd()
 
 # Import Data
-dataf <- read.csv("GerberGreenBook_Chapter3_Donations.csv",head=TRUE,sep=",") # enter your file name here
+dataf <- read.csv("../../data/chapter-3/GerberGreenBook_Chapter3_Donations.csv",head=TRUE,sep=",") # enter your file name here
 
 # Advanced Options
 

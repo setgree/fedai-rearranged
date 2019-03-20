@@ -3,6 +3,7 @@
 rm(list=ls())       # clear objects in memory
 library(ri)       # load the RI package
 set.seed(1234567)   # random number seed, so that results are reproducible
+pdf('../../results/chapter-3/Arceneaux-results.pdf') # save results explicitly 
 
 
 # note first must set file directory where data file is stored
@@ -17,7 +18,7 @@ library(foreign)    # package allows R to read Stata datasets
 # Data are from Arceneaux, Kevin. 2005. “Using Cluster Randomized Field Experiments to Study Voting Behavior.” The Annals of the American Academy of Political and Social Science 601: 169-79.
 
 # read in data using Stata file
-kansas <- read.dta("Arceneaux_AAAPSSsubset_2005.dta")
+kansas <- read.dta("../../data/chapter-3/Arceneaux_AAAPSSsubset_2005.dta")
 
 # Alternatively, you can instead read in data using .csv file
 # kansas <- read.csv(file="Arceneaux_AAAPSSsubset_2005.csv",head=TRUE,sep=",")
@@ -32,7 +33,9 @@ covs <- as.matrix(kansas[,2:21])  # covariates are past voter turnout if you car
 
 probs <- genprobexact(Z,clustvar=clust)  # subjects are clustered by precinct
 
-numiter <- 100000  # actual number of randomizations in this case is 40116600
+# numiter <- 100000  # actual number of randomizations in this case is 40116600
+# note that 100000 can create memory issues -- reducing to 10000
+numiter <- 10000
 
 perms <- genperms(Z,maxiter=numiter,clustvar=clust)    # clustered assignment
 numiter <- ncol(perms)  # reset numiter so that it is no larger than the maximum number of possible randomizations
@@ -93,4 +96,4 @@ sum(distoutHT <= ateHT)
 sum(abs(distoutHT) >= abs(ateHT))
 
 dispdist(distoutHT,ateHT)            # compare to null distribution
-
+dev.off()
