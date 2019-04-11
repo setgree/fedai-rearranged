@@ -1,14 +1,14 @@
-set.seed(1234567)         # set random seed
+# clear workspace
+rm(list = ls())
+
+set.seed(1234567)   # set random seed
 N <- 7              # number of units
 m <- 2              # number of treated units
 sel <- rnorm(N)     # N standard Normal deviates
 Tr <- order(sel)    # ordering permutation which orders the deviates
 Tr[1:m]             # the first m indexes are treated units
 
-# clear workspace
-rm(list = ls())
 
-set.seed(1234567)      # set random seed
 load('../../data/chapter02/GerberGreenBook_Chapter2_HowToRandomize_7treat2.RData')   # load object data1 
 N <- nrow(data1)        # number of units
 m <- 2                  # number of treated units
