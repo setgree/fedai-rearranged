@@ -3,7 +3,7 @@
 rm(list=ls())       # clear objects in memory
 library(ri)       # load the RI package
 set.seed(1234567)   # random number seed, so that results are reproducible
-pdf('../../results/chapter-3/Arceneaux-results.pdf') # save results explicitly 
+pdf('../../results/chapter03/Arceneaux-results.pdf') # save results explicitly 
 
 
 # note first must set file directory where data file is stored
@@ -18,7 +18,7 @@ library(foreign)    # package allows R to read Stata datasets
 # Data are from Arceneaux, Kevin. 2005. “Using Cluster Randomized Field Experiments to Study Voting Behavior.” The Annals of the American Academy of Political and Social Science 601: 169-79.
 
 # read in data using Stata file
-kansas <- read.dta("../../data/chapter-3/Arceneaux_AAAPSSsubset_2005.dta")
+kansas <- read.dta("../../data/chapter03/Arceneaux_AAAPSSsubset_2005.dta")
 
 # Alternatively, you can instead read in data using .csv file
 # kansas <- read.csv(file="Arceneaux_AAAPSSsubset_2005.csv",head=TRUE,sep=",")

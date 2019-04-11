@@ -3,10 +3,10 @@
 set -ex
 
 # Chapter 2:
-Rscript "chapter-2/GerberGreenBook_Chapter2_HowToRandomize_7treat2.R"
-Rscript "chapter-2/GerberGreenBook_Chapter2_Simulation_7_treat_2_Table_2_1.R"
+Rscript "chapter02/GerberGreenBook_Chapter2_HowToRandomize_7treat2.R"
+Rscript "chapter02/GerberGreenBook_Chapter2_Simulation_7_treat_2_Table_2_1.R"
 
 # Chapter 3:
-Rscript "chapter-3/Arceneaux_AAAPSSsubset_2005_CodeforCh3.R"
-Rscript "chapter-3/GerberGreenBook_Chapter3_Figure_1.R"
-Rscript "chapter-3/GerberGreenBook_Chapter3_RIandTTest_Box_3_7.R"
+Rscript "chapter03/Arceneaux_AAAPSSsubset_2005_CodeforCh3.R"
+Rscript "chapter03/GerberGreenBook_Chapter3_Figure_1.R"
+Rscript "chapter03/GerberGreenBook_Chapter3_RIandTTest_Box_3_7.R"
